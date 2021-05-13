@@ -1,0 +1,31 @@
+opam-version: "2.0"
+name: "satysfi-fonts-noto-sans-mono-doc"
+version: "1.0.0"
+synopsis: "Document of SATySFi Font Package for Noto Sans Monospace fonts"
+description: """
+Document package for satysfi-fonts-noto-sans
+"""
+maintainer: "Tatsumi Gamou <tatsumigamou@yahoo.co.jp>"
+authors: "Tatsumi Gamou <tatsumigamou@yahoo.co.jp>"
+license: "CC0-1.0"
+homepage: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono"
+dev-repo: "git+https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono.git"
+bug-reports: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono/issues"
+depends: [
+  "satysfi" { >= "0.0.5" & < "0.0.6" }
+  "satyrographos" { >= "0.0.2.6" & < "0.0.3" }
+  "satysfi-base" { >= "1.2.0"}
+  "satysfi-fonts-noto-sans-mono" {= "1.0.0"}
+]
+build: [
+  ["satyrographos" "opam" "build"
+   "--name" "fonts-noto-sans-mono-doc"
+   "--prefix" "%{prefix}%"
+   "--script" "%{build}%/Satyristes"]
+]
+install: [
+  ["satyrographos" "opam" "install"
+   "--name" "fonts-noto-sans-mono-doc"
+   "--prefix" "%{prefix}%"
+   "--script" "%{build}%/Satyristes"]
+]

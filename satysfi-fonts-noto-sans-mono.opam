@@ -1,0 +1,35 @@
+opam-version: "2.0"
+name: "satysfi-fonts-noto-sans-mono"
+version: "1.0.0"
+synopsis: "SATySFi Font Package for Noto Sans Monospace fonts"
+description: """
+SATySFi font package for Noto Sans fonts.
+
+This package installs font from https://www.google.com/get/noto/
+"""
+maintainer: "Tatsumi Gamou <tatsumigamou@yahoo.co.jp>"
+authors: "Tatumi Gamou <tatsumigamou@yahoo.co.jp>"
+license: "OFL"
+homepage: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono"
+dev-repo: "git+https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono.git"
+bug-reports: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono/issues"
+extra-source "noto-sans-mono.zip" {
+  archive: "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansMono-hinted.zip"
+  checksum: [
+    "sha256=08bc1d07e546ce79d8b8abd6812c86d77fba5d1f4b54529390e8a57d65827b76"
+    "sha512=c321c3b84442fb27e5fcad88ef46c3bf4162932013e081d37544d83c4fee00c6efe4d4969ef7ff338c6136cf4ef2809e929eb098775bd2896a6ce38abcb49058"
+  ]
+}
+depends: [
+  "satysfi" { >= "0.0.5" & <= "0.0.6" }
+  "satyrographos" { >= "0.0.2.6" & < "0.0.3" }
+]
+build: [
+  ["unzip" "-j" "-d" "noto-sans-mono" "-o" "noto-sans-mono.zip" "*.ttf"]
+]
+install: [
+  ["satyrographos" "opam" "install"
+   "--name" "fonts-noto-sans-mono"
+   "--prefix" "%{prefix}%"
+   "--script" "%{build}%/Satyristes"]
+]
