@@ -21,7 +21,7 @@ extra-source "noto-sans-mono.zip" {
   ]
 }
 depends: [
-  "satysfi" { >= "0.0.5" & <= "0.0.6" }
+  "satysfi" { >= "0.0.6" & <= "0.0.7" }
   "satyrographos" { >= "0.0.2.6" & < "0.0.3" }
 ]
 build: [
