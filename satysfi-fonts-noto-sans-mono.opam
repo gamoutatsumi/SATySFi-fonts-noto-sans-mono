@@ -9,7 +9,7 @@ This package installs font from https://www.google.com/get/noto/
 """
 maintainer: "Tatsumi Gamou <tatsumigamou@yahoo.co.jp>"
 authors: "Tatumi Gamou <tatsumigamou@yahoo.co.jp>"
-license: "OFL"
+license: "OFL-1.1"
 homepage: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono"
 dev-repo: "git+https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono.git"
 bug-reports: "https://github.com/gamoutatsumi/satysfi-fonts-noto-sans-mono/issues"
